@@ -25,7 +25,11 @@ bot.on('message', msg => {
       msg.reply('Please tag a valid user!');
     }
   } else if (msg.content.startsWith('!promote') || msg.content.startsWith('!demote')) {
-    let roleCache = msg.guild.roles.cache
+    if(!msg.guild) {
+      console.info("No guild found!");
+      return;
+    }
+    let roleCache = msg.guild.roles.cache;
     let promotedRole = roleCache.find(role => role.name === "Promoted");
     let demotedRole = roleCache.find(role => role.name === "Demoted");
     if (msg.mentions.users.size) {
@@ -34,9 +38,11 @@ bot.on('message', msg => {
       if (msg.content.startsWith('!promote')) {
         guildMember.roles.add(promotedRole);
         guildMember.roles.remove(demotedRole);
+        msg.channel.send(`${taggedUser.username} promoted.`);
       } else {
         guildMember.roles.add(demotedRole);
         guildMember.roles.remove(promotedRole);
+        msg.channel.send(`${taggedUser.username} demoted.`);
       }
     } else {
       msg.reply('Please tag a valid user!');
