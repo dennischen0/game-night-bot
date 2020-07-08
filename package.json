@@ -9,7 +9,7 @@
   },
   "author": "Dennis Chen",
   "dependencies": {
-    "discord.js": "^11.5.1",
+    "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.4"
   }
