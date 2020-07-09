@@ -1,51 +1,37 @@
-require('dotenv').config();
-const Discord = require('discord.js');
-const bot = new Discord.Client();
-const TOKEN = process.env.TOKEN;
+require('dotenv').config()
+const fs = require('fs')
+const Discord = require('discord.js')
+const TOKEN = process.env.TOKEN
+const { prefix } = require('./config.json')
+const bot = new Discord.Client()
 
-bot.login(TOKEN);
+bot.commands = new Discord.Collection()
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
+
+for (const file of commandFiles) {
+  const command = require(`./commands/${file}`)
+
+  bot.commands.set(command.name, command)
+}
 
 bot.on('ready', () => {
-  console.info(`Logged in as ${bot.user.tag}!`);
-});
+  console.info(`Logged in as ${bot.user.tag}!`)
+})
 
-bot.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('pong');
+bot.on('message', async message => {
+  if (!message.content.startsWith(prefix) || message.author.bot) return
 
-  } else if (msg.content.startsWith('!kick')) {
-    if (msg.mentions.users.size) {
-      const taggedUser = msg.mentions.users.first();
-      msg.channel.send(`You wanted to kick: ${taggedUser.username}`);
-      console.info(taggedUser.username.toLowerCase());
-      if (taggedUser.username.toLowerCase() === "dennis") {
-        msg.channel.send(`${taggedUser.username} cannot be kicked.`);
-      }
-    } else {
-      msg.reply('Please tag a valid user!');
-    }
-  } else if (msg.content.startsWith('!promote') || msg.content.startsWith('!demote')) {
-    if(!msg.guild) {
-      console.info("No guild found!");
-      return;
-    }
-    let roleCache = msg.guild.roles.cache;
-    let promotedRole = roleCache.find(role => role.name === "Promoted");
-    let demotedRole = roleCache.find(role => role.name === "Demoted");
-    if (msg.mentions.users.size) {
-      const taggedUser = msg.mentions.users.first();
-      let guildMember = msg.guild.member(taggedUser);
-      if (msg.content.startsWith('!promote')) {
-        guildMember.roles.add(promotedRole);
-        guildMember.roles.remove(demotedRole);
-        msg.channel.send(`${taggedUser.username} promoted.`);
-      } else {
-        guildMember.roles.add(demotedRole);
-        guildMember.roles.remove(promotedRole);
-        msg.channel.send(`${taggedUser.username} demoted.`);
-      }
-    } else {
-      msg.reply('Please tag a valid user!');
-    }
+  const args = message.content.slice(prefix.length).split(/ +/)
+  const command = args.shift().toLowerCase()
+
+  if (!bot.commands.has(command)) return
+
+  try {
+    bot.commands.get(command).execute(message, args)
+  } catch (error) {
+    console.error(error)
+    message.reply('there was an error trying to execute that command!')
   }
-});
+})
+
+bot.login(TOKEN)
