@@ -9,7 +9,7 @@ module.exports = {
         let input = args[0] ? args[0] : '1d7';
         dice.roll(input);
         let result = dice.log.shift();
-        let reply = '${message.author} rolled ${result.toString()}';
+        let reply = `${message.author} rolled ${result.toString()}`;
         return message.channel.send(reply).catch(console.error);
     }
 }
