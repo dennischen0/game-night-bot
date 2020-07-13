@@ -1,4 +1,4 @@
-const { DiceRoller } = require('rpg-dice-roller/lib/umd/bundle.js')
+const DiceRoller = require('rpg-dice-roller/lib/umd/bundle.js')
 
 module.exports = {
     name: 'roll',
