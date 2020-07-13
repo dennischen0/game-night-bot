@@ -1,4 +1,4 @@
-const DiceRoller = require('../node_modules/rpg-dice-roller/dice-roller.js');
+const { DiceRoller } = require('rpg-dice-roller/lib/umd/bundle.js')
 
 module.exports = {
     name: 'roll',
@@ -9,7 +9,7 @@ module.exports = {
         let input = args[0] ? args[0] : '1d7';
         dice.roll(input);
         let result = dice.log.shift();
-        let reply = `${message.author} rolled ${result.toString()}`;
+        let reply = `${message.author} rolled ${result.toString()}`;ls
         return message.channel.send(reply).catch(console.error);
     }
 }
