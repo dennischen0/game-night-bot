@@ -10,12 +10,18 @@
   "author": "Dennis Chen",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "bufferutil": "^4.0.1",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
+    "erlpack": "github:discordapp/erlpack",
     "mathjs": "^7.0.2",
     "nodemon": "^2.0.4",
+    "standard": "*",
     "rpg-dice-roller": "^4.1.2",
-    "standard": "*"
+    "sodium": "^3.0.2",
+    "utf-8-validate": "^5.0.2",
+    "zlib-sync": "^0.1.7"
   },
   "devDependencies": {
     "eslint": "^7.4.0",
