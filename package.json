@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "standard"
+    "pretest": "eslint .",
+    "test": "jest"
   },
   "author": "Dennis Chen",
   "repository": {
@@ -21,7 +22,6 @@
     "erlpack": "github:discordapp/erlpack",
     "mathjs": "^7.0.2",
     "nodemon": "^2.0.4",
-    "standard": "*",
     "rpg-dice-roller": "^4.1.2",
     "sodium": "^3.0.2",
     "utf-8-validate": "^5.0.2",
@@ -31,8 +31,10 @@
     "eslint": "^7.4.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.18.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^26.1.0"
   }
 }
