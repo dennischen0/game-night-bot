@@ -8,6 +8,10 @@
     "test": "standard"
   },
   "author": "Dennis Chen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dennischen0/discord-hello-world-bot.git"
+  },
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
