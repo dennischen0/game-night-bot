@@ -1,4 +1,4 @@
-const ping = require('../../commands/ping.js')
+const ping = require('../../src/commands/ping.js')
 
 describe('ping', () => {
   const mockMessage = {

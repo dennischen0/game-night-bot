@@ -4,9 +4,10 @@ const Discord = require('discord.js')
 const TOKEN = process.env.TOKEN
 const { prefix } = require('./config.json')
 const bot = new Discord.Client()
+const path = require('path')
 
 bot.commands = new Discord.Collection()
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
+const commandFiles = fs.readdirSync(path.join(__dirname, './commands')).filter(file => file.endsWith('.js'))
 
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`)
