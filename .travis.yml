@@ -6,8 +6,7 @@ deploy:
   api_key:
     secure: 1ZNCduGe1ZWNKt1okZt5bJGaav+i15V0meBWLXmD59ddA3wxqXG+32iEwGuuQilKBWEHhHoLRsxhOIPQA0bZ13cuiK3OgTs8n+rjyOTVMLRol2bGpM4QFq56fs69c4286SJoaq13CWerFvoJocj/Xz3msUzYa5EPtBfccM9wt3nZAKzO3pi+NazMsDzsYLyfKLtFxjPF+o5Zq9SM6c56JtDSYhRZUaJ9gNiWVz9F7shYRzYDGRfcxG0kYIZ+eDD+kgbLWIDwtlAigk6qCPsYF8wEC50ANPhjldWsEugCzO5+WnUOJIpw9YwAtm6Jd2TtSMoDTxU3NEZza4y9sTahvAAx8GFkz1hBzpHfhEMIu4mABFf1/fQRUm1YU1RJ7wuhECyE5//WT0ETy9HXdnJzc6kZyc6KGh2GptSpbVP0fLrFRCunvi51nWIq1woVwh94g3lglrRmeZacCsanHvF4XJMQPcTZPm+TvhDEDGPVPfeSLA60jP9sggRRDRLJwZMoVjZ0h7H/nbCDK9O+bs9hPvojho7VFlIHw2/n1daR5zfbPNizWNfJTQo00xO51FFaHXFOJRgWdvsC4i3Y7CKzxNuemazgZRHzM2PsETHFlqX+JrDcBfHi2LU+7gbG4q1dg3Dy+xjxc3BjjrxHLeaHpiBm4h3Ak/gR/K7xeCXTmGU=
   app: discord-game-night-bot
-install:
+before_install:
   - npm install -g codecov
-script:
-  - npm test
+after_success:
   - codecov
