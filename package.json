@@ -4,7 +4,7 @@
   "description": "Hello World Bot",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start src/index.js --name 'Game Night Bot'",
+    "start": "pm2 start src/index.js --name 'Game Night Bot' -i max",
     "dev": "nodemon src/index.js",
     "lint": "eslint .",
     "pretest": "npm run lint",
