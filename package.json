@@ -4,8 +4,10 @@
   "description": "Hello World Bot",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
-    "pretest": "eslint .",
+    "start": "pm2 start src/index.js --name 'Game Night Bot'",
+    "dev": "nodemon src/index.js",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
     "test": "jest"
   },
   "author": "Dennis Chen",
@@ -21,7 +23,7 @@
     "dotenv": "^8.2.0",
     "erlpack": "github:discordapp/erlpack",
     "mathjs": "^7.0.2",
-    "nodemon": "^2.0.4",
+    "pm2": "^4.4.0",
     "rpg-dice-roller": "^4.1.2",
     "sodium": "^3.0.2",
     "utf-8-validate": "^5.0.2",
@@ -35,6 +37,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^2.0.4",
     "jest": "^26.1.0"
   }
 }
