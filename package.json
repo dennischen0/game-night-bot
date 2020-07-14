@@ -49,18 +49,11 @@
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
- 
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**",
       "!**/coverage/**"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test",
-      "pre-push": "npm test"
-    }
   },
   "bugs": {
     "url": "https://github.com/dennischen0/game-night-bot/issues"
