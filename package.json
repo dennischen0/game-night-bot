@@ -4,7 +4,7 @@
   "description": "Hello World Bot",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start src/index.js --name 'Game Night Bot' -i max",
+    "start": "pm2-runtime start src/index.js --name 'Game Night Bot' -i 1",
     "dev": "nodemon src/index.js",
     "lint": "eslint .",
     "pretest": "npm run lint",
@@ -13,7 +13,7 @@
   "author": "Dennis Chen",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dennischen0/discord-hello-world-bot.git"
+    "url": "git+https://github.com/dennischen0/discord-hello-world-bot.git"
   },
   "license": "ISC",
   "dependencies": {
