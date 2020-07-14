@@ -12,7 +12,7 @@
     "dev": "nodemon src/index.js",
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "jest --collectCoverage"
+    "test": "jest"
   },
   "author": "Dennis Chen",
   "repository": {
@@ -46,8 +46,13 @@
     "jest": "^26.1.0"
   },
   "jest": {
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true
+    "coverageDirectory": "../coverage/",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/coverage/**"
+    ]
   },
   "bugs": {
     "url": "https://github.com/dennischen0/game-night-bot/issues"
