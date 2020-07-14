@@ -2,7 +2,7 @@ const DiceRoller = require('rpg-dice-roller/lib/umd/bundle.js')
 
 module.exports = {
   name: 'roll',
-  alias: ['luck', 'r'],
+  aliases: ['luck', 'r'],
   description: 'Rolls a die',
   execute (message, args) {
     const dice = new DiceRoller.DiceRoller()
