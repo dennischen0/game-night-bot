@@ -23,7 +23,7 @@ Install [Node.js and NPM](https://nodejs.org/en/download/)
 
 Fork or download this project.
 
-Then copy the `.env.example` file and rename it to `.env`. In this file you have to change the TOKEN variable to be your bot's token.
+Then copy the `.env.example` file and rename it to `.env`. In this file you have to change the `TOKEN` variable to be your bot's token.
 
 Instructions on how to create a bot can be found on [Discord's developer website](https://discord.com/developers/applications).
 
@@ -47,13 +47,11 @@ npm run dev
 
 If you get an error regarding sodium, install the following dependencies:
 
-```
+```bash
 brew install libtool autoconf automake
 ```
 
 ## ❯ Scripts and Tasks
-
-All script are defined in the `package-scripts.js` file, but the most important ones are listed here.
 
 ### Install
 
