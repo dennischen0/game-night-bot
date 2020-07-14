@@ -1,4 +1,4 @@
-# Discord Game Night Bot [![Build Status](https://travis-ci.com/dennischen0/game-night-bot.svg?branch=master)](https://travis-ci.com/dennischen0/game-night-bot)
+# Discord Game Night Bot [![Build Status](https://travis-ci.com/dennischen0/game-night-bot.svg?branch=master)](https://travis-ci.com/dennischen0/game-night-bot) [![codecov](https://codecov.io/gh/dennischen0/game-night-bot/branch/master/graph/badge.svg)](https://codecov.io/gh/dennischen0/game-night-bot)
 
 This bot does nothing useful right now.
 
