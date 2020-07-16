@@ -1,10 +1,17 @@
-// Imports the Google Cloud client library
 const textToSpeech = require('@google-cloud/text-to-speech')
-
 const fs = require('fs')
 const util = require('util')
+const CLIENT_EMAIL = process.env.GOOGLE_ACCOUNT_EMAIL
+const PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n')
+const PROJECT_ID = process.env.GOOGLE_PROJECT_ID
 
-const client = new textToSpeech.TextToSpeechClient()
+const client = new textToSpeech.TextToSpeechClient({
+  credentials: {
+    client_email: CLIENT_EMAIL,
+    private_key: PRIVATE_KEY
+  },
+  project_id: PROJECT_ID
+})
 
 module.exports = {
   name: 'say',
