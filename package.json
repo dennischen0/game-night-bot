@@ -53,7 +53,8 @@
       "**/*.{js,jsx}",
       "!**/node_modules/**",
       "!**/coverage/**"
-    ]
+    ],
+    "testEnvironment": "node"
   },
   "bugs": {
     "url": "https://github.com/dennischen0/game-night-bot/issues"
