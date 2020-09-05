@@ -25,7 +25,7 @@
     "@google-cloud/text-to-speech": "^3.0.1",
     "bufferutil": "^4.0.1",
     "codecov": "^3.7.1",
-    "discord.js": "^12.2.0",
+    "discord.js": "^12.3.0",
     "dotenv": "^8.2.0",
     "erlpack": "github:discordapp/erlpack",
     "husky": "^4.2.5",
