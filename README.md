@@ -16,6 +16,7 @@ This bot does nothing useful right now.
 You need to set up your development environment before you can do anything.
 
 Install [Node.js and NPM](https://nodejs.org/en/download/)
+Install [Nodemon](https://nodemon.io/)
 
 - on OSX use [homebrew](http://brew.sh) `brew install node`
 
