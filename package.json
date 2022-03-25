@@ -12,7 +12,9 @@
     "dev": "nodemon src/index.js",
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "author": "Dennis Chen",
   "repository": {
@@ -30,12 +32,13 @@
     "erlpack": "github:discordapp/erlpack",
     "husky": "^4.2.5",
     "mathjs": "^7.0.2",
-    "pm2": "^4.4.0",
+    "pm2": "^5.0.0",
     "rpg-dice-roller": "^4.1.2",
     "sodium": "^3.0.2",
     "tmp": "^0.2.1",
     "utf-8-validate": "^5.0.2",
-    "zlib-sync": "^0.1.7"
+    "zlib-sync": "^0.1.7",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "eslint": "^7.4.0",
@@ -61,5 +64,6 @@
   "bugs": {
     "url": "https://github.com/dennischen0/game-night-bot/issues"
   },
-  "homepage": "https://github.com/dennischen0/game-night-bot#readme"
+  "homepage": "https://github.com/dennischen0/game-night-bot#readme",
+  "snyk": true
 }
