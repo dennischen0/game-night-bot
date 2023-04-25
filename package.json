@@ -28,7 +28,7 @@
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "erlpack": "github:discordapp/erlpack",
-    "husky": "^4.2.5",
+    "husky": "^5.0.0",
     "mathjs": "^7.0.2",
     "pm2": "^4.4.0",
     "rpg-dice-roller": "^4.1.2",
